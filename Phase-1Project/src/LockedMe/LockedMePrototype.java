@@ -45,6 +45,55 @@ public class LockedMePrototype
         	System.out.println("Root Directory is not present");
         }
         
+      //--------------------------------------------------------------------------------------------------------------------------------
+        //Adding a file to existing directory   
+
+         
+      
+       /*	// first way to add file  
+        //----------------------------------------------------------------------------------    	  
+           System.out.println("Enter the file name:");
+           String filename = scanner.nextLine();
+           File file = new File(dirPath,filename); //initialize File object and passing path as argument  
+           boolean result;  
+           try   
+           {  
+           result = file.createNewFile();  //creates a new file  
+           if(result)      // test if successfully created a new file  
+           {  
+           System.out.println("file created "+file.getCanonicalPath()); //returns the path string  
+           }  
+           else  
+           {  
+           System.out.println("File already exist at location: "+file.getCanonicalPath());  
+           }  
+           }   
+           catch (IOException e)   
+           {  
+           e.printStackTrace();    //prints exception if any  
+           } 
+       		
+        //-------------------------------------------------------------------------------------
+      	  
+           */
+           
+           
+        //second way to add file
+           
+           
+           
+           boolean success=false;
+           System.out.println("Enter file name to be created "); 
+           String filename = scanner.nextLine(); 
+           File f = new File(dirPath,filename); 
+           if (f.exists()) 
+           { System.out.println("File already exists"); } 
+           else { System.out.println("No such file exists, creating now"); 
+           success = f.createNewFile(); 
+           if (success) 
+           { System.out.printf("Successfully created new file: %s%n", f); } 
+           else { System.out.printf("Failed to create new file: %s%n", f); } }        
+        
         
         scanner.close();
         
