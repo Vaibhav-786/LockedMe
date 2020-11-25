@@ -95,6 +95,28 @@ public class LockedMePrototype
            else { System.out.printf("Failed to create new file: %s%n", f); } }        
         
            
+         //-------------------------------------------------------------------------------------------       
+           //Deleting a user defined file
+             
+             LockedMePrototype ff1 = new LockedMePrototype();
+             
+             System.out.println("Enter the file to be delete: " );
+             String name1 = scanner.next();
+             
+             
+             String result1=ff1.findFile(name1,new File(dirPath));
+             
+             File file1 = new File(result1);
+             
+             if (result1!=null && file1.getCanonicalPath().equals(result1)) //----added case sensitivity by using getCanonicalPath() method
+             {
+             	file1.delete();
+             	System.out.println("File deleted successfully from location:"+result1);
+             }else
+             {
+             	System.out.println("file is not present in directory so can't be deleted.");
+             }           
+           
          //-------------------------------------------------------------------------------------------------------------------------       
            // Searching a user defined file
            
