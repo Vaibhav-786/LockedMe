@@ -94,6 +94,28 @@ public class LockedMePrototype
            { System.out.printf("Successfully created new file: %s%n", f); } 
            else { System.out.printf("Failed to create new file: %s%n", f); } }        
         
+           
+         //-------------------------------------------------------------------------------------------------------------------------       
+           // Searching a user defined file
+           
+           
+           LockedMePrototype ff = new LockedMePrototype();
+          
+           System.out.println("Enter the file to be searched: " );
+           String name = scanner.next();
+           
+           
+           String result=ff.findFile(name,new File(dirPath));
+           
+           File file = new File(result);
+           
+           if (result!=null && file.getCanonicalPath().equals(result)) //----added case sensitivity by using getCanonicalPath() method
+           {
+           	System.out.println("File searched successfully at location:"+result);
+           }else
+           {
+           	System.out.println("file is not present in directory.");
+           }          
         
         scanner.close();
         
@@ -105,4 +127,24 @@ public class LockedMePrototype
         
         
 	}//------main
+	
+	public String findFile(String name,File file) 
+    {    
+		String searchedpath="";
+        File[] list = file.listFiles();
+        if(list!=null)
+        for (File fil : list)
+        {
+            if (fil.isDirectory())
+            {
+                findFile(name,fil);
+            }
+            else if (name.equalsIgnoreCase(fil.getName()))
+            {
+            	searchedpath=fil.getAbsolutePath();
+            }
+            
+        }
+		return (searchedpath);
+    }
 }//----class
