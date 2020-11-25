@@ -14,24 +14,44 @@ public class LockedMePrototype
 	static int choice,choice1;
 	public static void main (String[] args) throws IOException 
 	{
-		//Scanner scanner = new Scanner( System.in );
+		//User Interface
 		
-//------------------------------------------------------------------------------------------------		
+		
+		System.out.println("-----------------------------------------------------------------------------------");
+		System.out.println("******************************LOCKEDME.COM (PROTOTYPE)*****************************");
+		System.out.println("-----------------------------------------------------------------------------------"); 
+		System.out.println("LOCKEDME.COM (PROTOTYPE) is a virtual key for your repository.");
+		System.out.println("In this Application there are three options with generic features as follow:");
+		System.out.println("Option 1--> Setting the root path of directory and retrieving the existing file names in ascending order");
+		System.out.println("Option 2--> Contains business level operations as follow:");
+		System.out.println("\tOption 1--> Add a user defined file in present directory.");
+		System.out.println("\tOption 2--> Delete a user defined file in present directory.");
+		System.out.println("\tOption 3--> Search a user defined file in present directory.");
+		System.out.println("\tOption 4--> Navigate back to main menu.");
+		System.out.println("Option 3--> Close the Application.");
+		System.out.println("---------------------------------------------------------------------------------");
+		System.out.println("HERE STARTS THE APPLICATION");
+		System.out.println("---------------------------------------------------------------------------------");
+//-----------------------------------------------------------------------------------------------------------------------------------------------------		
+		//Switch1
+		
 		while(true){
-			System.out.println("To execute case 1, Enter value 1");
-			System.out.println("To execute case 2, Enter value 2");
-			System.out.println("To Exit, Enter value 9");
+			System.out.println("******************************----------------------*****************************");
+			System.out.println("To set path of root directory and retrieve existing file in ascending order, Enter value 1.");
+			System.out.println("To do business-level operation, Enter value 2");
+			System.out.println("To close the Application, Enter value 3");
+			System.out.println("******************************----------------------*****************************");
 			
 			@SuppressWarnings("resource")
 			Scanner scanner = new Scanner( System.in );
-			System.out.println("Enter your choice::");
+			System.out.println("Enter your value:");
 			 choice = scanner.nextInt();//accept user input
 			
 			
 		
 			switch(choice){
-			case 1: System.out.println("I am case 1");
-//------------------------------------------------------------------------------------------------------------------------------------
+			case 1: 
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
 	//	selecting root directory and retrieving existing file in ascending order 
 		
 		
@@ -50,7 +70,7 @@ public class LockedMePrototype
         	Collections.sort(listFile);
         	if (folder.list().length > 0)
         	{
-			System.out.println("---------------------------------------");
+			System.out.println("******************************----------------------*****************************");
 			System.out.println("Name of files present in root directory  in ascending order:");
 			for(Object o:listFile)
 			{
@@ -71,70 +91,41 @@ public class LockedMePrototype
         
         break;
         
- //------------------------------------------------------------------------------------------------------       
+ //----------------------------------------------------------------------------------------------------------------------------------------------------       
         
-			case 2: System.out.println("I am case 2");
+			case 2: 
                               
 			
 			do{
-				System.out.println("To execute case 11, Enter value 11");
-				System.out.println("To execute case 22, Enter value 22");
-				System.out.println("To execute case 33, Enter value 33");
-				System.out.println("To Exit, Enter value 99");
+				System.out.println("******************************----------------------*****************************");
+				System.out.println("To add file, Enter value 1");
+				System.out.println("To delete file, Enter value 2");
+				System.out.println("To search file, Enter value 3");
+				System.out.println("To navigate to main menu, Enter value 4");
+				System.out.println("******************************----------------------*****************************");
 				
 				@SuppressWarnings("resource")
 				Scanner scanner5 = new Scanner( System.in );
 				
-				System.out.println("Enter your choice::");
+				System.out.println("Enter your value:");
 			    choice1 = scanner5.nextInt();//accept user input
 			
 			
 			
 			
 				switch(choice1){
-				case 11: System.out.println("I am case 11");
+				case 1: 
 			
 			
 			
 			
 			
-//--------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
      //Adding a file to existing directory   
 
-      
-   
-    /*	// first way to add file  
-     //----------------------------------------------------------------------------------    	  
-        System.out.println("Enter the file name:");
-        String filename = scanner.nextLine();
-        File file = new File(dirPath,filename); //initialize File object and passing path as argument  
-        boolean result;  
-        try   
-        {  
-        result = file.createNewFile();  //creates a new file  
-        if(result)      // test if successfully created a new file  
-        {  
-        System.out.println("file created "+file.getCanonicalPath()); //returns the path string  
-        }  
-        else  
-        {  
-        System.out.println("File already exist at location: "+file.getCanonicalPath());  
-        }  
-        }   
-        catch (IOException e)   
-        {  
-        e.printStackTrace();    //prints exception if any  
-        } 
-    		
-     //-------------------------------------------------------------------------------------
-   	  
-        */
+         
         
-        
-     //second way to add file
-        
-        
-				Scanner scanner2 = new Scanner( System.in );
+		Scanner scanner2 = new Scanner( System.in );
         boolean success=false;
         System.out.println("Enter file name to be created "); 
         String filename = scanner2.nextLine(); 
@@ -148,23 +139,23 @@ public class LockedMePrototype
         else { System.out.printf("Failed to create new file: %s%n", f); } }  
 
         
-  //---------------------------------------------------------------------------------      
+//-----------------------------------------------------------------------------------------------------------------------------------------------------      
         break;
         
-  //------------------------------------------------------------------------      
+//-----------------------------------------------------------------------------------------------------------------------------------------------------      
         
         
-				case 22: System.out.println("I am case 22"); 
+				case 2:  
         
         
- //-------------------------------------------------------------------------------------------       
+//-----------------------------------------------------------------------------------------------------------------------------------------------------       
       //Deleting a user defined file
         
-				Scanner scanner3 = new Scanner( System.in );
+		Scanner scanner3 = new Scanner( System.in );
 				
         LockedMePrototype ff1 = new LockedMePrototype();
         
-        System.out.println("Enter the file to be delete: " );
+        System.out.println("Enter the file to be deleted: " );
         String name1 = scanner3.next();
         
         
@@ -178,26 +169,26 @@ public class LockedMePrototype
         	System.out.println("File deleted successfully from location:"+result1);
         }else
         {
-        	System.out.println("file is not present in directory so can't be deleted.");
+        	System.out.println("file is not present in directory so can't be delete.");
         }
    
-//------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
         
       break;
       
-//--------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
      
       
       
-				case 33: System.out.println("I am case 33"); 
+				case 3:  
       
         
         
- //-------------------------------------------------------------------------------------------------------------------------       
+//-----------------------------------------------------------------------------------------------------------------------------------------------------      
         // Searching a user defined file
         
         
-				Scanner scanner4 = new Scanner( System.in );
+		Scanner scanner4 = new Scanner( System.in );
 				
         LockedMePrototype ff = new LockedMePrototype();
        
@@ -217,45 +208,45 @@ public class LockedMePrototype
         	System.out.println("file is not present in directory.");
         }
         
-//-------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
        
         break;
         
-//----------------------------------------------------------------------------------------------------------
-				case 99: System.out.println("Exiting the inner application"); 
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+				case 4: System.out.println("Navigating back to main menu."); 
    
 				
 				break;
-//-----------------------------------------------------------------------------------------------------				
+//-----------------------------------------------------------------------------------------------------------------------------------------------------				
 				
-				default: System.out.println("Incorrect input!!! Please re-enter choice from our menu");
+				default: System.out.println("Incorrec value! please select correct value.");
 				
 				
 				}//--------switch2
 				
 				
 			}//----------while2
-			while (choice1 != 99);
+			while (choice1 != 4);
 			break;
 
-//--------------------------------------------------------------------------------------------------				
+//-----------------------------------------------------------------------------------------------------------------------------------------------------				
              
 			
-			case 9: System.out.println("Exiting the application");
+			case 3: System.out.println("APPLICATION CLOSED.");
 			System.exit(0);
 			
-//---------------------------------------------------------------------------------------------------------			
+//-----------------------------------------------------------------------------------------------------------------------------------------------------			
 			
-			default: System.out.println("Incorrect input!!! Please re-enter choice from our menu");
+			default: System.out.println("Incorrec value! please select correct value.");
 			
 			
 			}//---------switch1
 			
-			//scanner.close();
+		
 			
 		}//----------------while1
 			
-			//scanner.close(); 
+		 
         
 	
 	
